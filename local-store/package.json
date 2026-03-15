@@ -1,0 +1,60 @@
+{
+  "name": "@microdotbuilder/local-store",
+  "version": "0.1.0",
+  "description": "Local-first sync primitives for Convex apps.",
+  "type": "module",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/microDotBuilder/CONVEX_local_first.git",
+    "directory": "local-store"
+  },
+  "homepage": "https://github.com/microDotBuilder/CONVEX_local_first/tree/main/local-store",
+  "bugs": {
+    "url": "https://github.com/microDotBuilder/CONVEX_local_first/issues"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
+  "exports": {
+    "./react": {
+      "types": "./dist/react/index.d.ts",
+      "import": "./dist/react/index.js"
+    },
+    "./server": {
+      "types": "./dist/server/index.d.ts",
+      "import": "./dist/server/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsup && tsc -p tsconfig.build.json",
+    "prepack": "pnpm run build"
+  },
+  "dependencies": {
+    "async-channel": "^0.2.0",
+    "dexie": "~4.0.10",
+    "zod": "^3.24.0"
+  },
+  "peerDependencies": {
+    "convex": "^1.23.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^18.17.0",
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.0.0",
+    "convex": "^1.23.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "tsup": "^8.5.1",
+    "typescript": "~5.0.3",
+    "vitest": "^1.6.1"
+  }
+}
